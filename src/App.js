@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
-import './App.css';
+import React, { useState } from 'react'
+import './App.css'
 import { pixels } from './data/pixels'
 import { firstDay, lastDay, months } from './data/months'
-import Picker from './components/datepicker';
-import PixelTable from './components/pixelTable';
+import Picker from './components/datepicker'
+import PixelTable from './components/pixelTable'
 
-// TODO blah, console, task list
 const App = () => {
   let defaultPicked = firstDay
   const today = new Date()
@@ -13,10 +12,9 @@ const App = () => {
     defaultPicked = today
   }
 
-  const [picked, setPicked] = useState(defaultPicked);
+  const [picked, setPicked] = useState(defaultPicked)
 
   const onPickerChange = (newPick) => {
-    // remove existing chosen
     months.forEach(item => item.chosen = false)
     pixels.forEach(item => {
       item.chosen = false
@@ -38,11 +36,11 @@ const App = () => {
   pixels[dayIndex].colours[monthIndex].chosen = true
 
   return (
-    <div>
+    <div className='container'>
       <Picker picked={picked} handlePickerChange={(newPick) => onPickerChange(newPick)} />
       <PixelTable pixels={pixels} months={months} />
     </div>
   )
 }
 
-export default App;
+export default App

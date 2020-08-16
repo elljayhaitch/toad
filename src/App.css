@@ -1,1 +1,4 @@
 .divTableCell { display: table-cell; min-width: 45px; max-width: 45px; height: 45px; line-height: 45px; vertical-align: middle; text-align: center; font-size: 10px; border: white 2px solid;}
+.divTableBodyCell {color: #39ff14; font-size: 45px;}
+
+.container {margin: 10px;}
